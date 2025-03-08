@@ -4,7 +4,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.inventory.ItemStack;
-import org.jetbrains.annotations.NotNull;
+import org.jspecify.annotations.NonNull;
+
 
 /**
  * Called when a player picks up a crafted item from the result slot of a crafting grid.
@@ -14,7 +15,7 @@ public class ItemCraftedEvent extends Event{
     private final Player player;
     private final ItemStack craftedItemStack;
 
-    public ItemCraftedEvent(@NotNull Player player, @NotNull ItemStack craftedItemStack) {
+    public ItemCraftedEvent(@NonNull Player player, @NonNull ItemStack craftedItemStack) {
         this.player = player;
         this.craftedItemStack = craftedItemStack;
     }
@@ -24,7 +25,7 @@ public class ItemCraftedEvent extends Event{
      *
      * @return Player
      */
-    @NotNull
+    @NonNull
     public Player getPlayer() {
         return player;
     }
@@ -34,18 +35,18 @@ public class ItemCraftedEvent extends Event{
      *
      * @return ItemStack
      */
-    @NotNull
+    @NonNull
     public ItemStack getCraftedItemStack() {
         return craftedItemStack;
     }
 
-    @NotNull
+    @NonNull
     @Override
     public  HandlerList getHandlers() {
         return HANDLERS;
     }
 
-    @NotNull
+    @NonNull
     public static HandlerList getHandlerList() {
         return HANDLERS;
     }
